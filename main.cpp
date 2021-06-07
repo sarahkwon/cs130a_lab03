@@ -95,7 +95,6 @@ int main(int argc, char *argv[])
          for (string s : newUserFriends)
          {
             int indexOfFriend = redBlackTree.getIndex(s);
-            cout << s << "," << indexOfFriend << endl;
             friendshipGraph.createFriendship(name, currentIndex, s, indexOfFriend);    
          }
 
