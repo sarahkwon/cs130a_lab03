@@ -34,8 +34,14 @@ int main(int argc, char *argv[])
       getline(ss, name, ',');
       getline(ss, age, ',');
       getline(ss, occupation, ',');
-      getline(ss, temp, '"'); //skips the quotation mark for friends
-      getline(ss, friends, '"'); //gets friends without the quotations 
+      if (currentLine.find("\"") != -1)
+      {
+         getline(ss, temp, '"'); //skips the quotation mark for friends
+         getline(ss, friends, '"'); //gets friends without the quotations 
+      } else
+      {
+         friends = "";
+      }
 
       profileDataController.insertUser(name, age, occupation);
       redBlackTree.insertUser(name, currentIndex);
